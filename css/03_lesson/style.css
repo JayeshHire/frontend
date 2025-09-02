@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.select-box {
+    position: relative;
+    cursor: pointer;
+}
+
+.options {
+    position: absolute;
+    top: 20px;
+    border: 2px solid black;
+    background-color: aqua;
+    visibility: hidden;
+    border-radius: 2px;
+    padding: 4px;
+    /* display: none; */
+}
+
+.options p {
+    border-bottom: 2px solid black;
+    width: 70px;
+    cursor: url("./highlight_mouse_cursor_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+
+.cookie-box {
+    height: auto;
+    width: 200px;
+    border: 2px solid rgb(20, 100, 130);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: rgb(108, 206, 239);
+    visibility: hidden;
+}

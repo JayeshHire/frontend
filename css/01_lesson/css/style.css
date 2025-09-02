@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    background-color: antiquewhite;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px dotted rgb(23, 40, 65);
+}
+
+.header-info {
+    flex: 1 1 100%;
+    border: 2px solid rgb(100, 123, 10);
+}
+
+.menu {
+    flex: 1 1 150px;
+    border: 2px solid rgb(100, 123, 10);
+    margin: 10px 10px 0 0;
+    width: 100px;
+}
+
+.info {
+    flex: 4 1 auto;
+    border: 2px solid rgb(100, 123, 10);
+    margin: 10px 0 0 0;
+}
+
+.menu-options {
+    display: flex;
+    border: 2px dotted rgb(150, 50, 100);
+    flex-direction: column;
+    gap: 0px;
+    /* justify-content:space-evenly ; */
+}
+
+.menu-options > * {
+    border: 2px solid rgb(150, 50, 100);
+    text-indent: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: small-caps;
+    color: rgb(150, 30, 100);
+    font-weight: bold;
+    font-size: x-large;
+    justify-self: start;
+    margin: 0px;
+}
+
+.info-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1182px;
+}
+
+.info-text > * {
+    /* display: contents; */
+    text-align: left;
+    flex: 1 1 200px;
+}
+
+.info-text > p {
+    flex-grow: 0;
+}
+
+
+.info-text > img {
+    float: left;
+}
+
+.image-info {
+    display: flex;
+    width: 510px;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.image-info > img {
+    width: 200px;
+    margin-bottom: 0px;
+}
+
+.image-info > p.image-info-text {
+    flex-wrap: wrap;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.image-info > .image-title {
+    margin: 0px;
+    text-align: center;
+    font-size: 15px;
+    width: 200px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

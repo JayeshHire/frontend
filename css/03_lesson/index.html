@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="content">
+        <div class="select-box">
+            <p id="get-opt-btn">Click me to get options</p>
+            <div class="options" id="option-lst">
+                <p>Option 1</p>
+                <p>Option 2</p>
+                <p>Option 3</p>
+                <p>Option 4</p>
+            </div>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas pariatur perferendis itaque quam sequi necessitatibus sunt mollitia placeat porro nesciunt rerum labore, blanditiis reiciendis vitae temporibus consequuntur nisi doloremque aliquam?
+            </p>
+        </div>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus asperiores quos dolores eum! Debitis, ducimus suscipit! Temporibus fugit pariatur assumenda blanditiis. Alias incidunt rerum deserunt amet veritatis sit ex.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe hic earum aut quas ad, nulla id quam iusto eius amet omnis culpa provident quae rem cupiditate consequuntur necessitatibus dicta non.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, aspernatur! Recusandae accusamus facilis dolor magni placeat, ea non nostrum officia labore suscipit consequatur esse expedita nulla delectus ratione nemo! Officia.
+        </p>
+    </div>
+    
+    <div class="cookie-box" id="cookie-popup">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repudiandae asperiores ullam similique aut aliquam veniam, magni voluptas non assumenda ab placeat nulla totam fugiat suscipit delectus dolores sequi eaque?
+        </p>
+
+        <button id="popup-stop-btn">Confirm</button>
+        <button id="reject-btn">Reject</button>
+    </div>
+    
+    <script>
+        const getOptBtn = document.getElementById("get-opt-btn") ;
+        let optionVisibility = false ;
+        const options = document.getElementById("option-lst");
+        const opts = options.querySelectorAll("p") ;
+
+        // making the options visible and hidden on click
+        getOptBtn.addEventListener("click", () => {
+            if (optionVisibility) options.style.visibility = "hidden";
+            else options.style.visibility = "visible";
+
+            optionVisibility = !optionVisibility ;
+        }) ;
+
+        // making the options hidden after selection
+        opts.forEach(opt => {
+            opt.addEventListener("click", () => {
+                options.style.visibility = "hidden";
+                optionVisibility = !optionVisibility
+            });
+        })
+
+        const contentBody = document.getElementById("content");
+        const cookieBox = document.getElementById("cookie-popup");
+        const cookieEvent = new CustomEvent("cookieEvent", {elementId: "cookie-popup"})
+        const rejectBtn = document.getElementById("reject-btn");
+        const confirmBtn = document.getElementById("popup-stop-btn");
+
+        document.addEventListener("cookieEvent", (event) => {
+            cookieBox.style.visibility = "visible";
+        });
+
+        rejectBtn.addEventListener("click", (event) => {
+            const btnElement = event.target ;
+            const parent = btnElement.parentNode ;
+            parent.style.visibility = "hidden" ;
+            contentBody.style.filter = 'none' ;
+        }) ;
+
+        let cookiePopInterval = setInterval(() => {
+            document.dispatchEvent(cookieEvent) ;
+            contentBody.style.filter = 'blur(5px)' ;
+        }, 10000) ;
+
+        confirmBtn.addEventListener("click", () => {
+            clearInterval(cookiePopInterval) ;
+            cookieBox.style.visibility = "hidden";
+        })
+
+    </script>
+</body>
+</html>

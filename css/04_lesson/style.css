@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 2px solid rgb(100, 150, 100);
+    gap: 10px;
+    padding: 10px;
+}
+
+.header {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    border: 2px solid rgb(100, 150, 100);
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 10px;
+}
+
+.header > h1 {
+    align-self: baseline;
+}
+
+.header > p {
+    align-self: baseline;
+}
+
+.header-opts {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    justify-items: end;
+    align-items:end;
+}
+
+.sidebar {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border: 2px solid rgb(100, 150, 100);
+    grid-template-columns: subgrid;
+    padding: 10px;
+    position: sticky;
+    top: 110px;
+}
+
+/* .opt-container {
+    position: sticky ;
+    top: 10px;
+} */
+.sidebar > h2 {
+    position: sticky ;
+    top: 10px;
+}
+
+.sidebar > p  {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.main {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    border: 2px solid rgb(100, 150, 100);
+}
+
+.content-box {
+    grid-column: 2 / 5;
+    grid-row: 3;
+    border: 2px solid rgb(100, 150, 100);
+    gap: 15px;
+}
+
+.notification {
+    position: fixed ;
+    top: 200px;
+    left: 200px;
+    border: 2px solid rgb(100, 150, 100);
+    width: 700px;
+    visibility: hidden;
+}
