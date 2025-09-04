@@ -32,12 +32,42 @@ body {
     letter-spacing: 0.2em;
 }
 
+.msg-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.msg-box-icon {
+    /* align-self: last baseline; */
+    justify-self: stretch;
+    flex-basis: 100px;
+}
+
+.msg-box-icon:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s ease-out;
+}
+
+.msg-box-icon svg {
+    transform: scale(2);
+}
+
+.msg-box-icon svg:hover {
+    filter: drop-shadow(3px 7px 4px rgba(255, 223, 40, 2));
+}
+
 .container > .profile-info {
     grid-column: 2;
     grid-row: 3;
     border: 2px solid rgb(158, 119, 80);
     padding: 10px;
     position: relative;
+    /* box-shadow: 4px 5px 3px 4px rgba(68, 234, 53, 0.5); */
+}
+
+.profile-info-anim {
+    animation: profile-info-keyframe-anim 1s ease-out 0s infinite alternate none;
 }
 
 .profile-info-text {
@@ -64,4 +94,32 @@ body {
 
 .profile-info-menu > ul > li {
     cursor: pointer;
+}
+
+.msg-box-head-anim {
+    animation: text-animation-1 2s ease-out 0s 1 alternate none;
+}
+
+@keyframes text-animation-1 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    50% {
+        transform: translateY(-10px) ;
+    }
+    100% {
+        text-shadow: 3px 4px 5px rgba(68, 234, 53, 0.5) ;
+        transform: scaleY(1.5) ;
+        /* transform-origin: top left; */
+    }
+}
+
+@keyframes profile-info-keyframe-anim {
+    0% {
+
+    }
+    100% {
+        box-shadow: 5px 5px 5px 0px rgba(68, 234, 53, 0.4);
+        transform: translateY(-10px);
+    }
 }

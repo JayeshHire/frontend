@@ -30,13 +30,30 @@ function addEventListner2List(){
         "blog-btn"
     ] ;
 
+    const pinfoEle = document.querySelector("div.profile-info");
     for (li_item of li_ids) {
         const domEle = document.getElementById(li_item) ;
-        domEle.addEventListener("click", (event) => {
+
+        // adding click on btn to display content
+        domEle.addEventListener("mouseover", (event) => {
             let info_id = event.target.id.replace("-btn", "");
             makePinfoVisible(info_id) ;
+            pinfoEle.classList.add("profile-info-anim");
         })
+
+        domEle.addEventListener("mouseleave", () => {
+            pinfoEle.classList.remove("profile-info-anim") ;
+        })
+
+        
+        //adding mouseover event to animate the boxes
+        // domEle.addEventListener("mouseover", () => {
+
+        // })
     }
+
+    const pinfoMenu = document.querySelector("div.profile-info-menu");
+
 }
 
 addEventListner2List() ;
@@ -55,3 +72,23 @@ function getRandomIntInclusive(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+const iconBtn = document.getElementById("msg-box-icon-");
+const msgBoxHead = document.querySelector("h2.msg-box-head");
+iconBtn.addEventListener("click", () => {
+    let val = msgBoxHead.innerText ;
+    let idx = messages.indexOf(val) ;
+    if (idx == 4) {
+        idx = 0 ;
+    } else {
+        idx += 1 ;
+    }
+    let msg = messages[idx] ;
+    msgBoxHead.innerText = msg ;
+
+    msgBoxHead.classList.add("msg-box-head-anim");
+});
+
+msgBoxHead.addEventListener("animationend", () => {
+    msgBoxHead.classList.remove("msg-box-head-anim") ;
+});
