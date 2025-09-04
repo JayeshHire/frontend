@@ -1,0 +1,108 @@
+
+
+.box {
+    border: 2px solid rgb(201, 137, 58);
+    height: 30px;
+    width: 100px;
+    transition: transform 3s;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+/* .box:hover {
+    transform: translateY(100px);
+} */
+
+
+p.down {
+    /* transition: transform 0.5s; */
+    display: inline-block;
+    /* transform: translateY(100px); */
+    animation-name: msganime-down;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+p.up {
+    display: inline-block;
+    animation-name: msganime-up;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+p#h {
+    left: 0px;
+}
+
+p#e {
+    left: 10px;
+}
+
+p#l0 {
+    left: 20px;
+}
+
+p#l1 {
+    left: 30px;
+}
+
+p#o {
+    left: 40px;
+}
+
+/* p.down:hover {
+    transform: translateY(100px);
+} */
+
+p.cont {
+    animation-name: tilt-forward;
+    animation-delay: 1.5s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    /* animation-direction: alternate; */
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes msganime-down {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes msganime-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes tilt-forward {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px);
+        /* font-style: italic; */
+    }
+}
