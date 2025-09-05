@@ -86,9 +86,16 @@ iconBtn.addEventListener("click", () => {
     let msg = messages[idx] ;
     msgBoxHead.innerText = msg ;
 
-    msgBoxHead.classList.add("msg-box-head-anim");
+    msgBoxHead.classList.remove("text-float-anim");
+    
+    void msgBoxHead.offsetWidth;
+    msgBoxHead.classList.add("text-float-anim");
+});     
+
+iconBtn.addEventListener("mouseover", () => {
+    msgBoxHead.classList.add("text-float-anim");
 });
 
-msgBoxHead.addEventListener("animationend", () => {
-    msgBoxHead.classList.remove("msg-box-head-anim") ;
-});
+iconBtn.addEventListener("mouseleave", () => {
+    msgBoxHead.classList.remove("text-float-anim");
+})
