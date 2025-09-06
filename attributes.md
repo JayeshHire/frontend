@@ -11,3 +11,8 @@
 
 4. Email
 <a href="https://www.flaticon.com/free-icons/at" title="at icons">At icons created by Freepik - Flaticon</a>
+
+
+<a target="_blank" href="https://icons8.com/icon/13930/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<a target="_blank" href="https://icons8.com/icon/phOKFKYpe00C/x">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

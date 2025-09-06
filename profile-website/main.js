@@ -69,7 +69,7 @@ addEventListner2List() ;
 
 
 messages = [
-    "Continuous Learner", 
+    "Knowledge Seeker", 
     "Self Taught Developer", 
     "Loves Programming", 
     "Loves Low Level systems",
