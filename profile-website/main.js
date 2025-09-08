@@ -101,4 +101,19 @@ iconBtn.addEventListener("mouseover", () => {
 
 iconBtn.addEventListener("mouseleave", () => {
     msgBoxHead.classList.remove("text-float-anim");
-})
+});
+
+const emailLinkBtn = document.getElementById("email-field");
+const copyMsgEle = document.querySelector("#email-field .clipboard-msg");
+
+emailLinkBtn.addEventListener("click", (event) => {
+    copyMsgEle.style.visibility = "visible";
+    copyMsgEle.classList.add("clipboard-msg-anim");
+    navigator.clipboard.writeText("jayeshhire48@gmail.com");
+    event.preventDefault() ;
+}) ;
+
+copyMsgEle.addEventListener("animationend", () => {
+    copyMsgEle.style.visibility = "hidden" ;
+    copyMsgEle.classList.remove("clipboard-msg-anim") ;
+});
