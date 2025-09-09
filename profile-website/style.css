@@ -23,13 +23,15 @@ body {
 footer {
     /* border: 2px solid rgb(158, 119, 80); */
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     margin-top: 30px;
     margin-bottom: 0px;
     margin-left: 20px;
     margin-right: 20px;
     letter-spacing: 0.1em;
     word-spacing: 0.2em;
+    column-gap: 10px;
+    color: #b099e5;
     /* background-color: #330440; */
 }
 
@@ -46,7 +48,7 @@ footer > div:hover {
 }
 
 .credits {
-    grid-column: 5;
+    grid-column: 4;
     grid-row: 1;
     display: flex;
     flex-direction: column;
@@ -312,11 +314,17 @@ div#interest > .pinfo-content > ul li {
 
     }
     50% {
-
+        border-radius: 10px;
+        border-left: 0px;
+        border-right: 0px;
     }
     100% {
         background-color: rgba(174, 214, 207, 0.2);
         transform: scaleY(1.1) scaleX(1.1) translateY(-10px);
+        border-radius: 10px;
+        border-left: 0px;
+        border-right: 0px;
+        margin: 10px;
     }
 }
 
