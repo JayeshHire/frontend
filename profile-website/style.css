@@ -17,7 +17,69 @@ body {
   font-weight: 400;
   font-style: normal;
   margin: 0px;
-  height: 110vh;
+  height: 100%;
+}
+
+footer {
+    /* border: 2px solid rgb(158, 119, 80); */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 30px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
+    column-gap: 10px;
+    color: #b099e5;
+    /* background-color: #330440; */
+}
+
+footer a {
+    color: #7afee8;
+}
+
+footer a:hover {
+    color: #bbeded;
+}
+
+footer > div:hover {
+    animation: footer-card 0.5s ease-out 0s 1 alternate forwards;
+}
+
+.credits {
+    grid-column: 4;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid rgb(158, 119, 80); 
+}
+
+.credits h3 {
+    text-align: center;
+}
+
+.credits p {
+    margin: 0;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(158, 119, 80); 
+    text-align: center;
+    grid-column: 3;
+    grid-row: inherit;
+}
+
+.author p{
+    margin: 0px;
 }
 
 .container {
@@ -223,8 +285,47 @@ div#interest > .pinfo-content > ul li {
     animation: social-media-frame 1.4s ease-out 0s infinite alternate none;
 }
 
-@keyframes turn-round-box {
-    
+#email-field .clipboard-msg {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    /* margin-top: -10px; */
+    color: #8aaba6;
+    visibility: hidden;
+    /* animation: clipboard-msg-frame 1.5s ease-out 0s 1 alternate none; */
+}
+
+.clipboard-msg-anim {
+    animation: clipboard-msg-frame 2s ease-out 0s 1 alternate none;
+}
+
+@keyframes clipboard-msg-frame {
+    0% {
+
+    }
+    100% {
+        transform: translateY(-20px);
+        color: rgba(138, 171, 166, 0);
+    }
+}
+
+@keyframes footer-card {
+    0% {
+
+    }
+    50% {
+        border-radius: 10px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    100% {
+        background-color: rgba(174, 214, 207, 0.2);
+        transform: scaleY(1.1) scaleX(1.1) translateY(-10px);
+        border-radius: 10px;
+        border-left: 0px;
+        border-right: 0px;
+        margin: 10px;
+    }
 }
 
 @keyframes interest-lst-frame {
